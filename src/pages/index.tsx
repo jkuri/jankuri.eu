@@ -20,7 +20,13 @@ export default function Home() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
-  const render = useCallback((el: HTMLDivElement) => {
+  const render = useCallback(() => {
+    if (!bgElement.current) {
+      return;
+    }
+
+    const el = bgElement.current;
+
     w.current = el.clientWidth;
     h.current = el.clientHeight;
     select(el).select('svg').remove();
@@ -84,15 +90,21 @@ export default function Home() {
       .attr('r', () => 185)
       .attr('cx', (_: any, i: number) => x(i))
       .attr('cy', (d: any) => y(d))
-      .attr('fill', `rgba(255, 255, 255, 0.8)`)
+      .attr('fill', `rgba(255, 255, 255, 0.7)`)
       .attr('stroke', 'none');
   }, []);
 
-  const animate = useCallback((g: Selection<SVGGElement, unknown, null, undefined>) => {
+  const animate = useCallback(() => {
+    if (!gElement.current) {
+      return;
+    }
+
     x.current = x.current < 30 ? (x.current += 1) : 0;
-    g.selectAll('circle')
+
+    gElement.current
+      .selectAll('circle')
       .transition()
-      .duration(5000)
+      .duration(2000)
       .ease(easeLinear)
       .attr('cx', (_: any, i: number) => {
         const move = (w.current / 30) * i + (w.current / 30) * x.current;
@@ -100,21 +112,15 @@ export default function Home() {
       })
       .on('end', (_: any, size: number) => {
         if (size === 29) {
-          animate(g);
+          animate();
         }
       });
   }, []);
 
   const init = useCallback(() => {
-    render(bgElement.current!);
-
-    if (!gElement.current) {
-      return;
-    }
-
+    render();
     x.current = 0;
-
-    animate(gElement.current);
+    animate();
   }, [render, animate]);
 
   useEffect(() => {
@@ -147,19 +153,19 @@ export default function Home() {
             height={60}
             priority
           />
-          <span className="my-4 text-3xl font-bold sm:text-5xl">Senior Software Engineer</span>
-          <span className="text-xl font-medium sm:text-2xl">Slovenj Gradec, Slovenia</span>
+          <span className="my-4 text-3xl font-extrabold sm:text-5xl">Senior Software Engineer</span>
+          <span className="text-xl font-bold sm:text-2xl">Slovenj Gradec, Slovenia</span>
           <div className="mt-12 flex items-center justify-center gap-2 sm:gap-12">
             <Link href="https://github.com/jkuri" rel="noopener noreferrer" target="_blank">
               <Button size="lg">
-                <GitHubLogoIcon className="mr-2" />
-                <span>GitHub Profile</span>
+                <GitHubLogoIcon className="mr-2 size-5" />
+                <span className="font-bold">GitHub Profile</span>
               </Button>
             </Link>
             <Link href="https://www.linkedin.com/in/jkuri/" rel="noopener noreferrer" target="_blank">
               <Button size="lg">
-                <LinkedInLogoIcon className="mr-2" />
-                LinkedIn Profile
+                <LinkedInLogoIcon className="mr-2 size-5" />
+                <span className="font-bold">LinkedIn Profile</span>
               </Button>
             </Link>
           </div>
