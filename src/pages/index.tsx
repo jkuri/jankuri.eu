@@ -1,13 +1,13 @@
 import { Button } from '@/components/button';
 import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 import { Selection, easeLinear, scaleLinear, select } from 'd3';
-import { Lato } from 'next/font/google';
+import { Nunito } from 'next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef } from 'react';
 
-const lato = Lato({ weight: ['300', '400', '700', '900'], subsets: ['latin'], preload: false });
+const nunito = Nunito({ weight: ['300', '400', '700', '900'], subsets: ['latin'], preload: false });
 
 export default function Home() {
   const bgElement = useRef<HTMLDivElement>(null);
@@ -141,7 +141,7 @@ export default function Home() {
         <title>Jan Kuri - Slovenj Gradec, Slovenia</title>
       </Head>
       <main
-        className={`relative flex min-h-screen w-full items-center justify-between bg-black text-white ${lato.className}`}
+        className={`relative flex min-h-screen w-full items-center justify-between bg-black text-white ${nunito.className}`}
       >
         <div className="absolute inset-0 h-full w-full overflow-hidden" ref={bgElement} />
         <div className="z-1 relative mb-12 flex w-full flex-col items-center justify-center">
