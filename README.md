@@ -1,4 +1,3 @@
-# jankuri.me
+# jankuri.eu
 
-My personal homepage served at https://jankuri.me.
-
+My personal homepage served at [https://jankuri.eu](https://jankuri.eu).
