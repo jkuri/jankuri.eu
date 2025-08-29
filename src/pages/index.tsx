@@ -1,9 +1,14 @@
-import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import {
+  GitHubLogoIcon,
+  InstagramLogoIcon,
+  LinkedInLogoIcon,
+} from "@radix-ui/react-icons";
+import { Dribbble, Facebook, Mail } from "lucide-react";
 import { Comic_Neue } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/button";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 const comic = Comic_Neue({
   weight: ["300", "400", "700"],
@@ -18,43 +23,65 @@ export default function Home() {
         <title>Jan Kuri - Slovenj Gradec, Slovenia</title>
       </Head>
       <main
-        className={`relative flex min-h-screen w-full items-center justify-between bg-black text-white ${comic.className}`}
+        className={`relative flex min-h-dvh w-full items-center justify-between dark:bg-black dark:text-white ${comic.className}`}
       >
-        <div className="relative z-1 mb-12 flex w-full flex-col items-center justify-center">
+        <div className="absolute top-2 right-2">
+          <ThemeSwitcher />
+        </div>
+
+        <div className="flex w-full flex-col items-center justify-center">
           <Image
-            className="mb-10 rounded-full border-4 border-white"
+            className="rounded-full border-4 border-black dark:border-white"
             src="/1796022.jpeg"
             alt="Jan Kuri"
             width={160}
             height={60}
             priority
           />
-          <span className="my-4 font-extrabold text-3xl sm:text-5xl">
+          <span className="pt-6 pb-2 font-bold text-3xl sm:text-5xl">
             Senior Software Engineer
           </span>
-          <span className="font-bold text-xl sm:text-2xl">
+          <span className="py-2 font-bold text-xl sm:text-2xl">
             Slovenj Gradec, Slovenia
           </span>
-          <div className="mt-12 flex items-center justify-center gap-2 sm:gap-12">
+          <div className="flex items-center justify-center gap-6 pt-8 sm:gap-12 sm:pt-12">
             <Link
               href="https://github.com/jkuri"
               rel="noopener noreferrer"
               target="_blank"
             >
-              <Button size="lg">
-                <GitHubLogoIcon className="mr-2 size-5" />
-                <span className="font-bold">GitHub Profile</span>
-              </Button>
+              <GitHubLogoIcon className="size-7 sm:size-12" />
             </Link>
             <Link
               href="https://www.linkedin.com/in/jkuri/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              <Button size="lg">
-                <LinkedInLogoIcon className="mr-2 size-5" />
-                <span className="font-bold">LinkedIn Profile</span>
-              </Button>
+              <LinkedInLogoIcon className="size-7 sm:size-12" />
+            </Link>
+            <Link
+              href="https://www.instagram.com/jankuri_/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <InstagramLogoIcon className="size-7 sm:size-12" />
+            </Link>
+            <Link
+              href="https://dribbble.com/jkuri"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Dribbble className="size-7 sm:size-12" />
+            </Link>
+            <Link
+              href="https://facebook.com/jan.kuri.50/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Facebook className="size-7 sm:size-12" />
+            </Link>
+            <Link href="mailto:jkuri88@gmail.com">
+              <Mail className="size-7 sm:size-12" />
             </Link>
           </div>
         </div>
