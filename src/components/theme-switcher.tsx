@@ -8,7 +8,7 @@ export function ThemeSwitcher() {
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="flex h-9 w-9 items-center justify-center rounded-lg"
+      className="flex size-8 cursor-pointer items-center justify-center rounded-lg"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "dark" ? (
