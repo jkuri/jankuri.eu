@@ -4,13 +4,13 @@ import {
   LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
 import { Dribbble, Facebook, Mail } from "lucide-react";
-import { Comic_Neue } from "next/font/google";
+import { Geist } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/header";
 
-const comic = Comic_Neue({
+const geist = Geist({
   weight: ["300", "400", "700"],
   subsets: ["latin"],
   preload: false,
@@ -23,7 +23,7 @@ export default function Home() {
         <title>Jan Kuri - Slovenj Gradec, Slovenia</title>
       </Head>
       <main
-        className={`relative flex min-h-dvh w-full items-center justify-between dark:bg-black dark:text-white ${comic.className}`}
+        className={`relative flex min-h-dvh w-full items-center justify-between dark:bg-black dark:text-white ${geist.className}`}
       >
         <div className="absolute top-0 right-0 left-0">
           <Header />
