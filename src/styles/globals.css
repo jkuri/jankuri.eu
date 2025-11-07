@@ -18,19 +18,19 @@
 
 @layer utilities {
   :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-rgb: 255, 255, 255;
+    --foreground: #09090b;
+    --background: #ffffff;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --foreground-rgb: 255, 255, 255;
-      --background-rgb: 0, 0, 0;
+      --foreground-rgb: #ffffff;
+      --background-rgb: #09090b;
     }
   }
 
   body {
-    color: rgb(var(--foreground-rgb));
-    background: rgb(var(--background-rgb));
+    color: var(--foreground);
+    background: var(--background);
   }
 }
