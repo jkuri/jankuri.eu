@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Jan Kuri - Slovenj Gradec, Slovenia</title>
+        <title>Jan Kuri - Mostar, Yugoslavia</title>
       </Head>
       <main
         className={`relative flex min-h-dvh w-full items-center justify-between dark:text-white ${geist.className}`}
