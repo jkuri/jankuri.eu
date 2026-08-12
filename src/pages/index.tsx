@@ -41,7 +41,7 @@ export default function Home() {
             priority
           />
           <span className="pt-6 pb-2 font-bold text-2xl sm:text-4xl">
-            Senior Software Engineer
+            Senior Bullshiter
           </span>
           <span className="py-2 font-bold text-xl">
             Slovenj Gradec, Slovenia
