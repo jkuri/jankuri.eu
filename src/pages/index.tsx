@@ -44,7 +44,7 @@ export default function Home() {
             Senior Bullshiter
           </span>
           <span className="py-2 font-bold text-xl">
-            Slovenj Gradec, Slovenia
+            Mostar, Yugoslavia
           </span>
           <div className="flex items-center justify-center gap-6 pt-8 sm:gap-12 sm:pt-12">
             <Link
